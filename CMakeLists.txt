@@ -25,6 +25,17 @@ image_transport
 tf
 sensor_msgs
 dynamic_reconfigure
+message_generation
+)
+
+add_service_files(
+  FILES
+  getMap.srv
+)
+
+generate_messages(
+  DEPENDENCIES
+    std_msgs
 )
 
 find_package(OpenCV 3.0 QUIET)
@@ -161,3 +172,5 @@ install(DIRECTORY orb_slam2/config/
 install(DIRECTORY orb_slam2/Vocabulary/
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/orb_slam2/Vocabulary
 )
+
+
